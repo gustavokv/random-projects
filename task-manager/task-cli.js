@@ -1,3 +1,10 @@
+const fs = require("fs");
+
+fs.open("tasks.json", "a+", (err, file) => {
+    if(err)
+        throw err;
+});
+
 class Task{
     constructor(id, desc){
         this.id = id;
@@ -42,9 +49,11 @@ switch(command){
 function addTask(desc){
     let new_task = new Task(++id_counter, desc);
     json_obj = JSON.stringify(new_task);
-
-    
-    console.log(`Task added successfully (ID: ${id_counter})`);
+    fs.appendFile("tasks.json", json_obj, (err, file) => {
+        if(err)
+            throw err;
+        console.log(`Task added successfully (ID: ${id_counter})`);
+    });
 }
 
 function updateTask(id, desc){
