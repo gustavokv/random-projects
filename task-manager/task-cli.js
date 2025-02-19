@@ -1,10 +1,5 @@
 const fs = require("fs");
 
-fs.open("tasks.json", "a+", (err, file) => {
-    if(err)
-        throw err;
-});
-
 class Task{
     constructor(id, desc){
         this.id = id;
@@ -29,7 +24,14 @@ if(process.argv.at(2) == undefined){
 }
 
 const command = process.argv.at(2);
-var id_counter = 0;
+var id_counter;
+
+// fs.open("tasks.json", "w+", (err, file) => {
+//     if(err)
+//         throw err;
+// });
+
+fetch("tasks.json");
 
 switch(command){
     case "add":
