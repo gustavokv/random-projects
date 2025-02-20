@@ -24,14 +24,19 @@ if(process.argv.at(2) == undefined){
 }
 
 const command = process.argv.at(2);
-var id_counter;
+var id_counter=0, data = [];
 
-// fs.open("tasks.json", "w+", (err, file) => {
-//     if(err)
-//         throw err;
-// });
+fs.open("tasks.json", "w+", (err, file) => {
+    if(err)
+        throw err;
+});
 
-fetch("tasks.json");
+fs.readFile("tasks.json", (err, file) => {
+    if(file.length != 0){
+        data = require('./tasks.json');
+        id_counter = data[data.length - 1].id;
+    }
+});
 
 switch(command){
     case "add":
@@ -48,13 +53,18 @@ switch(command){
         return;
 }
 
+
 function addTask(desc){
     let new_task = new Task(++id_counter, desc);
-    json_obj = JSON.stringify(new_task);
-    fs.appendFile("tasks.json", json_obj, (err, file) => {
+    const json_obj = JSON.stringify(new_task);
+    data.push(json_obj);
+
+    var data_obj = JSON.stringify(data);
+
+    fs.writeFile("tasks.json", data_obj, (err) => {
         if(err)
             throw err;
-        console.log(`Task added successfully (ID: ${id_counter})`);
+        console.log(`Task added successfully (ID: ${new_task.id})`);
     });
 }
 
