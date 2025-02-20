@@ -5,7 +5,7 @@ if(process.argv.at(2) == undefined){
     return;
 }
 
-switch(process.argv.at(3)){
+switch(process.argv.at(2)){
     case "add":
         break;
     case "update":
