@@ -16,22 +16,23 @@ var tasks_obj = [];
 var tasks_str = fs.readFileSync('tasks.json', {encoding: 'utf8', flag: 'r'});
 if(tasks_str.length != 0) tasks_obj = JSON.parse(tasks_str);
 
+//Command selector
 switch(process.argv.at(2)){
     case "add":
         tasks_obj = tools.addTask(process.argv.at(3), tasks_obj);
         break;
-    case "update":        
+    case "update":    
+        tasks_obj = tools.updateTask(process.argv.at(3), process.argv.at(4), tasks_obj);    
         break;
     case "delete":
+        tasks_obj = tools.deleteTask(process.argv.at(3), tasks_obj);
         break;
     case "mark-in-progress":
-        break;
     case "mark-done":
+        tasks_obj = tools.markInProgress(process.argv.at(2), process.argv.at(3), tasks_obj);
         break;
     case "list":
-        // if(process.argv.at(3) == "done")
-        // else if(process.argv.at(3) == "todo")
-        // else if(process.argv.at(3) == "in-progress")
+        tools.list(process.argv.at(3), tasks_obj);
         break;
     default:
         console.log("[ERROR] Invalid command.");
@@ -39,4 +40,7 @@ switch(process.argv.at(2)){
 }
 
 tasks_str = JSON.stringify(tasks_obj);
+if(tasks_str == '[]')
+    tasks_str = '';
+
 fs.writeFileSync('tasks.json', tasks_str);
