@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+*{
+    font-family: "Oswald", serif;
+}
+
+.converter{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    font-weight: 300;
+}
+
+.btns{
+    display:flex;
+}
+
+button{
+    padding: 15px 35px;
+}
+
