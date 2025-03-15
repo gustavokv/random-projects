@@ -5,91 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unit Converter</title>
     <link rel="stylesheet" href="style/style.css">
+    <script src="script/converter-script.js"></script>
 </head>
 
 <body>
-    <section class="converter">
+    <main>
         <h1>Unit Converter</h1>
 
-        <div class="btns">
-            <button id="lenght-btn">Length</button>
-            <button id="weight-btn">Weigth</button>
-            <button id="temp-btn">Temperature</button>
-        </div>
-
-        <section class="length">
-            <p>Enter the length to convert</p>
-            <input type="number">
-
-            <p>Unit to convert from</p>
-            <select name="from" id="from-length">
-                <option value="milimeter">Milimeter</option>
-                <option value="centimeter">Centimeter</option>
-                <option value="meter">Meter</option>
-                <option value="kilometer">Kilometer</option>
-                <option value="inch">Inch</option>
-                <option value="foot">Foot</option>
-                <option value="yard">Yard</option>
-                <option value="mile">Mile</option>
-            </select>
-
-            <p>Unit to convert to</p>
-            <select name="to" id="to-length">
-                <option value="centimeter">Centimeter</option>  
-                <option value="milimeter">Milimeter</option>
-                <option value="meter">Meter</option>
-                <option value="kilometer">Kilometer</option>
-                <option value="inch">Inch</option>
-                <option value="foot">Foot</option>
-                <option value="yard">Yard</option>
-                <option value="mile">Mile</option>
-            </select>
+        <section id="unit-selectors">
+            <button id="length-btn">Length</button>
+            <button id="weigth-btn">Weigth</button>
+            <button id="temperature-btn">Temperature</button>
         </section>
 
-        <section class="weigth">
-            <p>Enter the weigth to convert</p>
-            <input type="number">
+        <form>
+            <label for="value-to-convert"></label>
+            <input type="text" id="value-to-convert" name="value-to-convert" required>
+            <label for="convert-from"></label>
+            <input type="text" id="convert-from" name="convert-from" required>
+            <label for="convert-to"></label>
+            <input type="text" id="convert-to" name="convert-to" required>
+            <input type="submit" value="Convert" id="submit-btn">
+        </form>
 
-            <p>Unit to convert from</p>
-            <select name="from" id="from-weigth">
-                <option value="miligram">Miligram</option>
-                <option value="gram">Gram</option>
-                <option value="kilogram">Kilogram</option>
-                <option value="ounce">Ounce</option>
-                <option value="pound">Pound</option>
-            </select>
-
-            <p>Unit to convert to</p>
-            <select name="to" id="to-weigth">
-                <option value="miligram">Miligram</option>
-                <option value="gram">Gram</option>
-                <option value="kilogram">Kilogram</option>
-                <option value="ounce">Ounce</option>
-                <option value="pound">Pound</option>
-            </select>
+        <section id="result">
+            <p>Result of your calculation</p>
+            <p id="result-text"></p>
+            <button id="reset">Reset</button>
         </section>
-
-        <section class="temperature">
-            <p>Enter the temperature to convert</p>
-            <input type="number">
-
-            <p>Unit to convert from</p>
-            <select name="from" id="from-temp">
-                <option value="celcius">Celcius</option>
-                <option value="fahrenheit">Fahrenheit</option>
-                <option value="kelvin">Kelvin</option>
-            </select>
-
-            <p>Unit to convert to</p>
-            <select name="to" id="to-temp">
-                <option value="celcius">Celcius</option>
-                <option value="fahrenheit">Fahrenheit</option>
-                <option value="kelvin">Kelvin</option>
-            </select>
-        </section>
-
-        <button id="submit">Convert</button>
-    </section>    
+    </main>
 </body>
 
 </html>

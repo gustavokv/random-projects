@@ -1,21 +1,86 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
 *{
-    font-family: "Oswald", serif;
+    font-family: "Bebas Neue", sans-serif;
+    box-sizing: border-box;
 }
 
-.converter{
-    display:flex;
+body{
+    margin: 0;
+    height: 100vh;
+    background-color: #3D5467;
+    display: flex;
+    flex-direction: column;  
     align-items: center;
-    flex-direction: column;
-    font-weight: 300;
+    justify-content: center; 
 }
 
-.btns{
-    display:flex;
+form{
+    display: flex;
+    flex-direction: column;  
+}
+
+main, #result{
+    background-color: #8AA29E;
+}
+
+main{
+    border: white 3px solid;
+    border-radius: 15%;
+    padding: 2em;
+    padding-top: 0em;
+    box-shadow: 7px 7px 15px;
+}
+
+main h1{
+    font-size: 50px;
+    text-align: center;
+    color: #3D5467;
 }
 
 button{
-    padding: 15px 35px;
+    width: 100%;
 }
 
+button, #submit-btn{
+    font-size: 20px;
+    color: #3D5467;
+    background-color: white;
+    transition-duration: 0.4s;
+    border:none;
+}
+
+button:hover, #submit-btn:hover{
+    background-color: #3D5467;
+    color:white;
+    
+}
+
+input[type=text]{
+    padding: 5px;
+    border:none;
+    border-bottom: 2px solid #3D5467;
+}
+
+input[type=text]:focus{
+    outline: none;
+}
+
+#submit-btn{
+    margin-top: 10px;
+}
+
+#unit-selectors{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+form{
+    display: flex;
+    gap:2px
+}
+
+#result{
+    display: none;
+}
