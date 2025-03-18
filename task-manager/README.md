@@ -1,4 +1,4 @@
-#Task Tracker CLI
+# Task Tracker CLI
 
 This CLI app is a simple task tracker where you can add new tasks, mark your tasks 
 with to do, in progress and done, delete tasks, update them and list tasks by their status.
