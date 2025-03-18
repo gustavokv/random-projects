@@ -20,19 +20,18 @@ form{
     flex-direction: column;  
 }
 
-main, #result{
+#converter, #result{
     background-color: #8AA29E;
 }
 
-main{
-    border: white 3px solid;
+#converter, #result{
     border-radius: 15%;
     padding: 2em;
     padding-top: 0em;
     box-shadow: 7px 7px 15px;
 }
 
-main h1{
+#converter h1{
     font-size: 50px;
     text-align: center;
     color: #3D5467;
@@ -48,6 +47,7 @@ button, #submit-btn{
     background-color: white;
     transition-duration: 0.4s;
     border:none;
+    cursor: pointer;
 }
 
 button:hover, #submit-btn:hover{
@@ -66,6 +66,11 @@ input[type=text]:focus{
     outline: none;
 }
 
+form label{
+    font-size: 25px;
+    color:#3D5467;
+}
+
 #submit-btn{
     margin-top: 10px;
 }
@@ -76,11 +81,29 @@ input[type=text]:focus{
     margin-bottom: 20px;
 }
 
+#length-btn{
+    background-color: #3D5467;
+    color: white;
+}
+
 form{
     display: flex;
-    gap:2px
+    gap:2px;
 }
 
 #result{
     display: none;
+    flex-direction: column;
+}
+
+#result p{
+    font-size: 40px;
+    color:#3D5467;
+    text-align: center;
+}
+
+#result #result-text {
+    color:white;
+    font-size: 30px;
+    padding-bottom: 50px;
 }

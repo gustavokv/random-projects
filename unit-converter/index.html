@@ -4,36 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unit Converter</title>
+    <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="style/style.css">
-    <script src="script/converter-script.js"></script>
 </head>
 
 <body>
-    <main>
+    <section id="converter">
         <h1>Unit Converter</h1>
 
         <section id="unit-selectors">
-            <button id="length-btn">Length</button>
-            <button id="weigth-btn">Weigth</button>
-            <button id="temperature-btn">Temperature</button>
+            <button id="length-btn" onclick="unit_selector('length')">Length</button>
+            <button id="weight-btn" onclick="unit_selector('weight')">Weight</button>
+            <button id="temperature-btn" onclick="unit_selector('temperature')">Temperature</button>
         </section>
 
-        <form>
-            <label for="value-to-convert"></label>
-            <input type="text" id="value-to-convert" name="value-to-convert" required>
-            <label for="convert-from"></label>
-            <input type="text" id="convert-from" name="convert-from" required>
-            <label for="convert-to"></label>
-            <input type="text" id="convert-to" name="convert-to" required>
+        <form id="input-form">
+            <label for="value-to-convert" id="value-label"></label>
+            <input type="text" id="value-to-convert" placeholder="33.5" name="value-to-convert" required>
+            <label for="convert-from">Unit to convert from</label>
+            <input type="text" id="convert-from" placeholder="Mile" name="convert-from" required>
+            <label for="convert-to">Unit to convert to</label>
+            <input type="text" id="convert-to" placeholder="Meter" name="convert-to" required>
             <input type="submit" value="Convert" id="submit-btn">
         </form>
+    </section>
 
-        <section id="result">
-            <p>Result of your calculation</p>
-            <p id="result-text"></p>
-            <button id="reset">Reset</button>
-        </section>
-    </main>
+    <section id="result">
+        <p>Result of <br>your calculation</p>
+        <p id="result-text"></p>
+        <button id="reset">Reset</button>
+    </section>
+
+    <script src="script/converter-script.js"></script>
 </body>
 
 </html>
