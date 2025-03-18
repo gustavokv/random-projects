@@ -1,5 +1,7 @@
 # Task Tracker CLI
 
+https://roadmap.sh/projects/task-tracker
+
 This CLI app is a simple task tracker where you can add new tasks, mark your tasks<br> 
 with to do, in progress and done, delete tasks, update them and list tasks by their status.<br>
 
@@ -29,11 +31,3 @@ starting by 1, in ascending order.<br>
     node ./task-cli.js list done<br>
     node ./task-cli.js list todo<br>
     node ./task-cli.js list in-progress<br>
-
-https://roadmap.sh/projects/task-tracker
-    
-
-    
-    
-
-        
